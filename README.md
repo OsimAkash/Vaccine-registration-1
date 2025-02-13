@@ -76,7 +76,7 @@ Node.js and npm (for frontend assets, if required)
 Configure a mail server (e.g., Mailpit for local or SMTP for production) for email notification.
 Steps
 Clone the repository
-git clone https://github.com/RoyHridoy/vaccine-registration-system.git
+git clone https://github.com/OsimAkash/vaccine-registration-1.git
 cd vaccine-registration-system
 Install dependencies
 composer install
@@ -94,9 +94,10 @@ Start the development server:
 php artisan serve
 Start asset compilation:
 npm run dev
-Start Services:
-# Start the queue worker
-php artisan queue:work
+Run php artisan queue:listen to start queue worker and listen.
+Add cron configuration to run the scheduler at regular interval.
+Example: * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+Start the server using php artisan serve.
 
 # Start the Schedule worker
 php artisan schedule:work
@@ -111,9 +112,6 @@ Scheduling Vaccinations
 Vaccination dates are scheduled automatically each day at 9 PM.
 Contribution
 Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
-
-License
-This project is licensed under the MIT License.
 
 Acknowledgments
 Thanks to the Laravel and FilamentPHP communities for their excellent frameworks and tools.
